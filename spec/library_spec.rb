@@ -23,4 +23,17 @@ describe Library do
       expect(dpl.authors).to eq([])
     end
   end
+
+  describe 'add_author' do
+    dpl.add_author(charlotte_bronte)
+    dpl.add_author(harper_lee)
+
+    it 'adds the given Author to @authors' do
+      expect(dpl.authors).to eq([charlotte_bronte, harper_lee])
+    end
+
+    it "adds all of the author's @books to the library's @books" do
+      expect(dpl.books).to eq([jane_eyre, professor, villette, mockingbird])
+    end
+  end
 end
