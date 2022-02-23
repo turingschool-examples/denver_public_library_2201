@@ -36,6 +36,7 @@ class Library
   def checkout(book)
     if @books.include?(book) && !@checked_out_books.include?(book)
       @checked_out_books << book
+      book.times_checked_out += 1
       return true
     else
       false
@@ -44,6 +45,11 @@ class Library
 
   def return(book)
     @checked_out_books.delete(book)
+  end
+
+  def most_popular_book
+    books_by_times_checked_out = @books.sort_by {|book| book.times_checked_out}
+    books_by_times_checked_out[-1]
   end
 
 end

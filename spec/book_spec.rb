@@ -17,5 +17,9 @@ RSpec.describe Book do
     it 'has a publication_year' do
       expect(@book.publication_year).to eq("1960")
     end
+
+    it 'is initialized with zero times checked out' do
+      expect(@book.times_checked_out).to eq(0)
+    end
   end
 end
