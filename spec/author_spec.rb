@@ -19,8 +19,11 @@ RSpec.describe Author do
   it "has class method 'write' which creates instance of Book and adds it to books array" do
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    villette = charlotte_bronte.write("Villette", "1853")
 
     expect(jane_eyre.class).to eq(Book)
     expect(jane_eyre.title).to eq("Jane Eyre")
+    expect(charlotte_bronte.books).to eq([jane_eyre, villette])
+
   end
 end
