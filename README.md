@@ -9,7 +9,7 @@
 * Submit a pull request from your repository to the turingschool-examples repository
   * Make sure to put your name in your PR!
 
-## Iteration 1
+## Iteration 1 x
 
 Use TDD to create a `Book` class that responds to the following interaction pattern. For the `publication_year` method, assume that the year is always the last four characters of the publication date.
 
