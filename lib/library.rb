@@ -23,9 +23,9 @@ class Library
   end
 
   def checkout(book)
-    # require "pry"; binding.pry
     if @books.include?(book) && !@checked_out_books.include?(book)
       @checked_out_books << book
+      book.checkout_counter += 1
       true
     else
       false
@@ -34,5 +34,10 @@ class Library
 
   def return(book)
     @checked_out_books.delete(book)
+  end
+
+  def most_popular_book
+    @books.sort_by! {|book| book.checkout_counter}
+    @books.last
   end
 end
