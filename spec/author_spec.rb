@@ -22,6 +22,6 @@ describe Author do
       villette = charlotte_bronte.write("Villette", "1853")
       expect(charlotte_bronte.books).to eq([jane_eyre, villette])
     end
-
   end
+  
 end
