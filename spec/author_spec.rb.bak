@@ -1,0 +1,37 @@
+require 'pry'
+require 'rspec'
+require './lib/book'
+require './lib/author'
+
+RSpec.describe Author do
+#  before(:all) do
+#    @charlotte_bronte = Author.new({first_name: "Charlotte",
+#                                    last_name: "Bronte"})
+#  end
+
+#  describe "Object" do
+#    it "exists" do
+#      expect(@charlotte_bronte).to be_instance_of(Author)
+#    end
+
+#    xit "has a name" do
+#      expect(@charlotte_bronte.name).to eq("Charlotte Bronte")
+#    end
+
+#    xit "has books empty by default" do
+#      expect(@charlotte_bronte.books).to eq([])
+#    end
+
+#  end
+end
+#
+# jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+#
+# pry(main)> jane_eyre.class
+# #=> Book
+# pry(main)> jane_eyre.title
+# #=> "Jane Eyre"
+#
+# villette = charlotte_bronte.write("Villette", "1853")
+#
+# pry(main)> charlotte_bronte.books
