@@ -14,13 +14,14 @@ RSpec.describe Book do
       expect(book.title).to eq("To Kill a Mockingbird")
     end
 
-    xit "has a author" do
+    it "has a author" do
       book = Book.new({author_first_name: "Harper", author_last_name: "Lee", title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
-      expect(book.author).to eq(author_last_name)
+      expect(book.author).to eq("Harper Lee")
     end
 
-    xit "has a publication_year" do
+    it "has a publication_year" do
       book = Book.new({author_first_name: "Harper", author_last_name: "Lee", title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
+      # require 'pry'; binding.pry
       expect(book.publication_year).to eq("1960")
     end
 
