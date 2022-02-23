@@ -62,4 +62,14 @@ RSpec.describe Library do
       expect(@dpl.checked_out_books).to eq([@jane_eyre])
     end
   end
+
+  describe '#return' do
+    it 'can return books' do
+      @dpl.add_author(@charlotte_bronte)
+      @dpl.checkout(@jane_eyre)
+      expect(@dpl.checked_out_books).to eq([@jane_eyre])
+      @dpl.return(@jane_eyre)
+      expect(@dpl.checked_out_books).to eq([])
+    end
+  end
 end
