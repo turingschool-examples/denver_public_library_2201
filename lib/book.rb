@@ -15,5 +15,4 @@ class Book
   def publication_year
     @publication_date.slice(-4, 4)
   end
-  
 end
