@@ -21,7 +21,6 @@ RSpec.describe Book do
 
     it "has a publication_year" do
       book = Book.new({author_first_name: "Harper", author_last_name: "Lee", title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
-      # require 'pry'; binding.pry
       expect(book.publication_year).to eq("1960")
     end
 

@@ -8,8 +8,7 @@ attr_reader :name, :books
   end
 
   def write(author, date)
-    book = Book.new({author_first_name: author.split.first, author_last_name: author.split.last, publication_date: date})
-
+    book = Book.new({author_first_name: author.split.first, author_last_name: author.split.last, title: author, publication_date: date})
   end
 
 end
