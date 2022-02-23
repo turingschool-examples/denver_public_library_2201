@@ -3,7 +3,6 @@ require './lib/book'
 class Author
   attr_reader :books
 
-
   def initialize(attributes)
     @attributes = attributes
     @first_name = attributes[:first_name]
@@ -28,9 +27,4 @@ class Author
     @new_book
 
   end
-
-
-
-
-
 end

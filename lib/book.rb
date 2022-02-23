@@ -17,10 +17,5 @@ class Book
 
   def publication_year
     @publication_date.split.last
-
   end
-
-
-
-
 end

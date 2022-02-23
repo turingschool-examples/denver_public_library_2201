@@ -27,7 +27,6 @@ RSpec.describe Library do
     dpl.add_author(charlotte_bronte)
     dpl.add_author(harper_lee)
 
-
     expect(dpl.authors).to eq([charlotte_bronte, harper_lee])
     expect(dpl.books).to eq([jane_eyre, professor, villette, mockingbird])
   end
@@ -46,22 +45,4 @@ RSpec.describe Library do
     expect(dpl.publication_time_frame_for(charlotte_bronte)).to eq({:start=>"1847", :end=>"1857"})
     expect(dpl.publication_time_frame_for(harper_lee)).to eq({:start=>"1960", :end=>"1960"})
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end
