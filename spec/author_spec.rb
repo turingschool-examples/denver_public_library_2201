@@ -13,8 +13,11 @@ RSpec.describe 'Author' do
   end
 
   it 'writes books' do
-    charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    villette = charlotte_bronte.write("Villette", "1853")
     
-    expect(charlotte_bronte.books[0]).to be_an_instance_of(Book)
+    expect(jane_eyre.class).to eq(Book)
+    expect(jane_eyre.title).to eq("Jane Eyre")
+    expect(charlotte_bronte.books).to eq([jane_eyre, villette])
   end
 end
