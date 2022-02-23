@@ -16,6 +16,8 @@ class Author
       title: book_title,
       publication_date: date_published
     }
-    @book = Book.new(book_details)
+    book = Book.new(book_details)
+    @books << book
+    return book
   end
 end
