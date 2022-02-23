@@ -40,4 +40,31 @@ RSpec.describe Library do
     expect(@dpl.publication_time_frame_for(charlotte_bronte)).to eq({:start=>"1847", :end=>"1857"})
   end
 
+  context "iteration IV" do
+    xit "can checkout books and maintain records of books in circulation" do
+      charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+      harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
+      jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+      professor = charlotte_bronte.write("The Professor", "1857")
+      villette = charlotte_bronte.write("Villette", "1853")
+       mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
+
+
+      expect(@dpl.checkout(mockingbird)).to eq(false)
+      expect(@dpl.checkout(jane_eyre)).to eq(false)
+
+      @dpl.add_author(charlotte_bronte)
+      @dpl.add_author(harper_lee)
+
+      expect(@dpl.checkout(mockingbird)).to eq(true)
+      expect(@dpl.checkout(jane_eyre)).to eq(true)
+
+      @dpl.checkout(jane_eyre)
+
+      expect(@dpl.checkout(jane_eyre)).to eq(false)
+      expect(@spl.checked_out_books).to eq([jane_eyre])
+    end
+
+
+  end
 end
