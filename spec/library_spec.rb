@@ -64,8 +64,7 @@ describe Library do
 
       dpl.add_author(charlotte_bronte)
       dpl.add_author(harper_lee)
-
-      expect(dpl.checkout(jane_eyre)).to be true
+      expect(dpl.checkout(jane_eyre)).to eq(true)
     end
 
     it 'adds the book to checked_out_books' do
@@ -75,9 +74,10 @@ describe Library do
       mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
       dpl.add_author(charlotte_bronte)
       dpl.add_author(harper_lee)
-      dpl.checkout(jayne_eyre)
+      dpl.checkout(jane_eyre)
 
-      expect(dpl.checked_out_books).to eq([jayne_eyre])
+
+      expect(dpl.checked_out_books).to eq([jane_eyre])
     end
 
     it 'can not checkout a book if it is already checked out' do
@@ -87,9 +87,9 @@ describe Library do
       mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
       dpl.add_author(charlotte_bronte)
       dpl.add_author(harper_lee)
-      dpl.checkout(jayne_eyre)
+      dpl.checkout(jane_eyre)
 
-      expect(dpl.checkout(jayne_eyre)).to eq(false)
+      expect(dpl.checkout(jane_eyre)).to eq(false)
     end
   end
 end
