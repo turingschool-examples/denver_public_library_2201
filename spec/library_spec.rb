@@ -12,7 +12,7 @@ RSpec.describe Library do
     expect(dpl.authors).to eq([])
   end
 
-  xit 'can list authors, books' do
+  it 'can list authors, books' do
     dpl = Library.new("Denver Public Library")
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
