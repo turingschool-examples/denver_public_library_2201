@@ -31,4 +31,11 @@ class Library
 
     time_frame
   end
+
+  def checkout(book)
+    if !@books.include?(book)
+      false
+    end
+  end
+  
 end
