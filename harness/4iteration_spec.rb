@@ -1,4 +1,4 @@
-require './spec/test_helper'
+require './harness/test_helper'
 require './lib/author'
 require './lib/library'
 
