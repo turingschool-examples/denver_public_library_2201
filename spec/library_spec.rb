@@ -42,7 +42,7 @@ RSpec.describe Library do
     expect(dpl.publication_time_frame_for(harper_lee)).to eq({start: "1960", end: "1960"})
   end
 
-  xit 'can checkout books' do
+  it 'can checkout books' do
     dpl = Library.new("Denver Public Library")
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")

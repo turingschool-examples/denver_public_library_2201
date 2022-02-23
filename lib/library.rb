@@ -22,4 +22,8 @@ class Library
       end: sorted_books.last.publication_year
     }
   end
+
+  def checkout(book)
+    @books.include?(book)
+  end
 end
