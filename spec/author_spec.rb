@@ -25,7 +25,7 @@ RSpec.describe Author do
 
     it 'knows a book' do
       @jane_eyre = @charlotte_bronte.write('Jane Eyre', 'October 16, 1847')
-      @villette = @charlotte_bronte.write('Villette', '1853')
+      binding.pry
       expect(@jane_eyre.class).to be_an_instance_of(Book)
     end
 
