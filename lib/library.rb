@@ -3,9 +3,9 @@ require './lib/author'
 require 'pry'
 
 class Library
-  attr_reader :name, :books, :authors
+  attr_reader :name, :books, :authors, :checked_out_books
 
-  def initialize(name, books = [], authors = [])
+  def initialize(name, books = [], authors = [], checked_out_books = [])
     @name = name
     @books = books
     @authors = authors
