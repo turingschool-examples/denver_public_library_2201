@@ -31,10 +31,13 @@ RSpec.describe Library do
       expect(@dpl.authors).to eq([])
     end
 
-    it "can add authors" do
+    it "can add authors and their books" do
+      @dpl = Library.new("Denver Public Library")
       @dpl.add_author(@charlotte_bronte)
       @dpl.add_author(@harper_lee)
       expect(@dpl.authors).to eq([@charlotte_bronte, @harper_lee])
-
+      expect(@dpl.books).to eq([@jane_eyre, @professor, @villette, @mockingbird])
     end
+
+
 end

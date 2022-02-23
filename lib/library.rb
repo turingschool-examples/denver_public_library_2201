@@ -8,6 +8,8 @@ attr_reader :name, :books, :authors
 
     def add_author(author)
       @authors << author
-    end 
+      @authors.each {|author| author.books.each {|book| @books << book if !@books.include?(book)}}
+      # require "pry"; binding.pry
+    end
 
 end
