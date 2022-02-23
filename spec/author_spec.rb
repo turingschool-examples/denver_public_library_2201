@@ -10,6 +10,9 @@ RSpec.describe Author do
     expect(@charlotte_bronte).to be_an_instance_of(Author)
   end
 
+  it "has a name" do
+    expect(@charlotte_bronte.name).to eq["Charlotte Bronte"]
+  end
 
-
+  
 end
