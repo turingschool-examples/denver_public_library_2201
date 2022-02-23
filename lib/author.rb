@@ -9,6 +9,9 @@ attr_reader :name, :books
 
   def write(author, date)
     book = Book.new({author_first_name: author.split.first, author_last_name: author.split.last, title: author, publication_date: date})
+    # require 'pry'; binding.pry
   end
+
+  
 
 end
