@@ -2,8 +2,8 @@
 
 ## Preparation
 
-* Fork this Repository
-* Clone YOUR fork
+* Fork this Repository x
+* Clone YOUR fork x
 * Compete the activity below
 * Push your solution to your fork
 * Submit a pull request from your repository to the turingschool-examples repository
