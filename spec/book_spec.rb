@@ -9,7 +9,7 @@ RSpec.describe Book do
   end
 
   it "has a title" do
-    expect(@book.title).to eq("To Kill A a Mockingbird")
+    expect(@book.title).to eq("To Kill a Mockingbird")
   end
 
 
