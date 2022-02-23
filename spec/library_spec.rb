@@ -17,7 +17,7 @@ RSpec.describe Library do
     expect(dpl.authors).to eq([])
   end
 
-  it "can add authors to authors array" do
+  it "can add authors to @authors array, which also adds all author books to @books array" do
     dpl = Library.new("Denver Public Library")
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
@@ -30,5 +30,6 @@ RSpec.describe Library do
     dpl.add_author(harper_lee)
 
     expect(dpl.authors).to eq([charlotte_bronte, harper_lee])
+    expect(dpl.books).to eq([jane_eyre, professor, villette, mockingbird])
   end
 end
