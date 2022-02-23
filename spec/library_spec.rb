@@ -27,7 +27,7 @@ RSpec.describe Library do
     expect(dpl.books).to eq([jane_eyre, professor, villette, mockingbird])
   end
 
-  xit 'can list publication times' do
+  it 'can list publication times' do
     dpl = Library.new("Denver Public Library")
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
