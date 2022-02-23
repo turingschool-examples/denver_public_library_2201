@@ -45,6 +45,7 @@ RSpec.describe Library do
 
   describe '#checkout' do
     it 'can check out books' do
+      @dpl.add_author(@charlotte_bronte)
       expect(@dpl.checkout(@jane_eyre)).to eq(true)
       expect(@dpl.checkout(@jane_eyre)).to eq(false)
     end
