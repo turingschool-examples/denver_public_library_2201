@@ -1,10 +1,11 @@
 class Library
-  attr_reader :name, :books, :authors
+  attr_reader :name, :books, :authors, :checked_out_books
 
   def initialize(name)
     @name = name
     @books = []
     @authors = []
+    @checked_out_books = []
   end
 
   def add_author(author)
@@ -19,5 +20,19 @@ class Library
     time_frame[:start] = books_by_year.first.publication_year
     time_frame[:end] = books_by_year.last.publication_year
     time_frame
+  end
+
+  def checkout(book)
+    # require "pry"; binding.pry
+    if @books.include?(book) && !@checked_out_books.include?(book)
+      @checked_out_books << book
+      true
+    else
+      false
+    end
+  end
+
+  def return(book)
+    @checked_out_books.delete(book)
   end
 end

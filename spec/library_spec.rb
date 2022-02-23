@@ -54,9 +54,6 @@ RSpec.describe Library do
     harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
     mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
 
-    dpl.add_author(charlotte_bronte)
-    dpl.add_author(harper_lee)
-
     expect(dpl.checkout(mockingbird)).to be false
     expect(dpl.checkout(jane_eyre)).to be false
 
