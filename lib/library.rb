@@ -6,5 +6,8 @@ attr_reader :name, :books, :authors
       @authors = []
     end
 
+    def add_author(author)
+      @authors << author
+    end 
 
 end
