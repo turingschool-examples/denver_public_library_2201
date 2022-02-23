@@ -50,4 +50,16 @@ RSpec.describe Library do
       expect(@dpl.checkout(@jane_eyre)).to eq(false)
     end
   end
+
+  describe '#checked_out_books' do
+    it 'is initialized without any books checked out' do
+      expect(@dpl.checked_out_books).to eq([])
+    end
+
+    it 'adds a book to the collection when the book is checked out' do
+      @dpl.add_author(@charlotte_bronte)
+      @dpl.checkout(@jane_eyre)
+      expect(@dpl.checked_out_books).to eq([@jane_eyre])
+    end
+  end
 end
