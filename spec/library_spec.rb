@@ -74,5 +74,6 @@ RSpec.describe Library do
     dpl.add_author(harper_lee)
 
     expect(dpl.checkout(jane_eyre)).to eq(true)
+    expect(dpl.checked_out_books).to eq([jane_eyre])
   end
 end
