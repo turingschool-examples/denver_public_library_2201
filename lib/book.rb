@@ -1,5 +1,5 @@
 class Book
-  attr_accessor :title, :author, :publication_date
+  attr_accessor :book, :title, :author, :publication_date
   def initialize(book)
     @book = book
     @title = book[:title]
@@ -12,12 +12,14 @@ class Book
   end
 
   def name
-    @first_name = @book[:author_first_name]
+    @first_name = @book[:author_first_name] 
     @last_name = @book[:author_last_name]
   end
 
   def author
-    name 
-    @author = @first_name + " " + @last_name
+    name
+    if @first_name != ""
+      @author = @first_name + " " + @last_name
+    end
   end
 end

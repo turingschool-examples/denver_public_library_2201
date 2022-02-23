@@ -1,3 +1,4 @@
+require 'pry'
 class Author
 
 attr_reader :name, :books, :first_name, :last_name
@@ -10,11 +11,6 @@ attr_reader :name, :books, :first_name, :last_name
   end
 
   def write(title, publication_date)
-    book = Book.new({})
-    book[:first_name] = @first_name
-    book[:last_name] = @last_name
-    book[:title] = title
-    book[:publication_date] = publication_date
-    book
+    book = Book.new({author_first_name: @first_name, author_last_name: @last_name, title: title, publication_date: publication_date})
   end
 end
