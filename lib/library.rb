@@ -29,7 +29,12 @@ attr_reader :name, :books, :authors, :checked_out_books
         true
       else
         false
-      end 
+      end
     end
+
+    def return(book)
+      @books << book
+
+    end 
 
 end
