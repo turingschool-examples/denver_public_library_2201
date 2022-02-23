@@ -19,8 +19,8 @@ RSpec.describe Author do
       expect(@charlotte_bronte.name).to eq('Charlotte Bronte')
     end
 
-    xit ' ' do
-      expect.to eq
+    it 'can hold books' do
+      expect(@charlotte_bronte.books).to eq([])
     end
 
     xit ' ' do
