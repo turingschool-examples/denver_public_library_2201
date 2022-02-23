@@ -9,6 +9,7 @@ class Library
     @name = name
     @books = books
     @authors = authors
+    @checked_out_books = checked_out_books
   end
 
   def add_author(author)
@@ -35,7 +36,10 @@ class Library
   def checkout(book)
     if !@books.include?(book)
       false
+    else
+      @checked_out_books << book
+      true
     end
   end
-  
+
 end
