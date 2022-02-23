@@ -7,8 +7,7 @@ RSpec.describe Library do
     @dpl = Library.new("Denver Public Library")
     @charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     @jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
-    @professor = @charlotte_bronte.write("The Professor", "1857")
-    @villette = @charlotte_bronte.write("Villette", "1853")
+
     @harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
     @mockingbird = @harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
   end
@@ -72,4 +71,21 @@ RSpec.describe Library do
       expect(@dpl.checked_out_books).to eq([])
     end
   end
+
+  describe '#most_popular_book' do
+    it 'can track the most popular book' do
+      @dpl.add_author(@charlotte_bronte)
+      @dpl.checkout(@jane_eyre)
+      @professor = @charlotte_bronte.write("The Professor", "1857")
+      @villette = @charlotte_bronte.write("Villette", "1853")
+      @dpl.checkout(@professor)
+      @dpl.checkout(@villette)
+      @dpl.return(@jane_eyre)
+      @dpl.checkout(@jane_eyre)
+      @dpl.return(@professor)
+      @dpl.return(@villette)
+      @dpl.return(@jane_eyre)
+      expect(@dpl.most_popular_book).to eq(@jane_eyre)
+    end
+  end  
 end
