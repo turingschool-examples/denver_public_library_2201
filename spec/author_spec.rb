@@ -27,8 +27,8 @@ RSpec.describe Author do
       expect(jane_eyre.class).to eq(Book) # is this a joke??
       expect(jane_eyre.title).to eq("Jane Eyre")
       villette = charlotte_bronte.write("Villette", "1853")
-      charlotte_bronte.add_book(jane_eyre)
-      charlotte_bronte.add_book(villette)
+      # charlotte_bronte.add_book(jane_eyre)
+      # charlotte_bronte.add_book(villette)
       expect(charlotte_bronte.books).to eq([jane_eyre, villette])
     end
   end
