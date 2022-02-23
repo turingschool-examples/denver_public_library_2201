@@ -1,7 +1,7 @@
 require './lib/book'
 require './lib/author'
 
-Rspec.describe Author do
+RSpec.describe Author do
 
   it 'can create an author' do
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
