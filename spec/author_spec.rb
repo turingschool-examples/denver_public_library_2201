@@ -23,8 +23,13 @@ RSpec.describe Author do
       expect(@charlotte_bronte.books).to eq([])
     end
 
-    xit ' ' do
-      expect.to eq
+    it 'knows a book' do
+      @jane_eyre = @charlotte_bronte.write('Jane Eyre', 'October 16, 1847')
+      @villette = @charlotte_bronte.write('Villette', '1853')
+      expect(@jane_eyre.class).to be_an_instance_of(Book)
+    end
+
+    it '' do
     end
   end
 end
