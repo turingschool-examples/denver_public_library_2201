@@ -1,4 +1,4 @@
-require './lib/book'
+require_relative 'book'
 
 class Author
   attr_reader :name, :books
