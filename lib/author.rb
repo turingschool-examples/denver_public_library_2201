@@ -18,7 +18,7 @@ class Author
   end
 
   def write(title, publication_date)
-    #Book.new(:title)
+    #Book.new
   end
 
 end
