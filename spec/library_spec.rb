@@ -62,7 +62,22 @@ describe Library do
 
   it "cannot checkout checked out books" do
     expect(dpl.checkout(jane_eyre)).to be false
-    expect(dpl.checkout(mockingbird)).to be true
-    expect(dpl.checkout(mockingbird)).to be false
+  end
+
+  it "can return books" do
+    dpl.return(jane_eyre)
+    expect(dpl.checked_out_books).to eq([])
+  end
+
+  it "can tell wich book is the most popular" do
+    dpl.checkout(jane_eyre)
+    dpl.checkout(villette)
+    expect(dpl.checked_out_books).to eq([jane_eyre, villette])
+    dpl.checkout(mockingbird)
+    dpl.return(mockingbird)
+    dpl.checkout(mockingbird)
+    dpl.return(mockingbird)
+    dpl.checkout(mockingbird)
+    expect(dpl.most_popular_book).to eq(mockingbird)
   end
 end

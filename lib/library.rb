@@ -30,9 +30,20 @@ class Library
       return false
     elsif @books.include?(book)
       @checked_out_books << book
+      book.checkout_count += 1
       return true
     else
       return false
     end
+  end
+
+  def return(book)
+    if @checked_out_books.include?(book)
+      @checked_out_books.delete(book)
+    end
+  end
+
+  def most_popular_book
+    @books.sort_by{ |book| book.checkout_count }[-1]
   end
 end
