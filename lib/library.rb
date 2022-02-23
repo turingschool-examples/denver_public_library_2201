@@ -34,7 +34,7 @@ class Library
   end
 
   def checkout(book)
-    if !@books.include?(book)
+    if !@books.include?(book) || @checked_out_books.include?(book)
       false
     else
       @checked_out_books << book
