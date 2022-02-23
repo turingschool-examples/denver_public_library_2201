@@ -6,6 +6,6 @@ RSpec.describe Book do
 
     expect(book.title).to eq("To Kill a Mockingbird")
     expect(book.author).to eq("Harper Lee")
-    expect(book.publication_year).to eq(1960)
+    expect(book.publication_year).to eq("1960")
   end
 end
