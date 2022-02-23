@@ -1,4 +1,4 @@
-require '.lib/book'
+require './lib/book'
 require 'pry'
 
 
