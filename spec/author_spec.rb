@@ -13,10 +13,16 @@ describe Author do
     expect(charlotte_bronte.name).to eq("Charlotte Bronte")
   end
 
+  jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+
   it "can write books" do
-    expect(charlotte_bronte.books).to eq([])
-    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
     expect(jane_eyre.class).to eq(Book)
     expect(jane_eyre.title).to eq("Jane Eyre")
+  end
+
+  villette = charlotte_bronte.write("Villette", "1853")
+
+  it "can write multiple books" do
+    expect(charlotte_bronte.books).to eq([jane_eyre, villette])
   end
 end
