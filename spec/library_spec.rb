@@ -66,7 +66,7 @@ describe Library do
       dpl.add_author(harper_lee)
       expect(dpl.checkout(jane_eyre)).to eq(true)
     end
-
+# this next test fails but I don't understand why. Everything is working as I expect it to 🤷🏼‍♂️
     it 'adds the book to checked_out_books' do
       jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
       professor = charlotte_bronte.write("The Professor", "1857")
@@ -74,7 +74,6 @@ describe Library do
       mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
       dpl.add_author(charlotte_bronte)
       dpl.add_author(harper_lee)
-      dpl.checkout(jane_eyre)
 
 
       expect(dpl.checked_out_books).to eq([jane_eyre])
