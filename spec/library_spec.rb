@@ -42,4 +42,11 @@ RSpec.describe Library do
       expect(@dpl.publication_time_frame_for(@harper_lee)).to eq({:start => "1960", :end => "1960"})
     end
   end
+
+  describe '#checkout' do
+    it 'can check out books' do
+      expect(@dpl.checkout(@jane_eyre)).to eq(true)
+      expect(@dpl.checkout(@jane_eyre)).to eq(false)
+    end
+  end
 end
