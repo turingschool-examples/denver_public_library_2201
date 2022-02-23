@@ -24,11 +24,7 @@ RSpec.describe Author do
     expect(jane_eyre).to be_an_instance_of(Book)
     expect(jane_eyre.title).to eq("Jane Eyre")
     expect(jane_eyre.class).to eq(Book)
-
     expect(charlotte_bronte.books).to eq([jane_eyre, villette])
-
-
   end
-
 
 end
