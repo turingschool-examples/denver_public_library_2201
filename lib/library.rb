@@ -25,7 +25,7 @@ attr_reader :name, :books, :authors, :checked_out_books, :books_lent_counter
     end
 
     def checkout(book)
-      @books_lent_counter[book.title] += 0
+      @books_lent_counter[book.title] += 1
       if @books.include?(book)
         @checked_out_books << @books.delete(book)
         true
@@ -41,6 +41,13 @@ attr_reader :name, :books, :authors, :checked_out_books, :books_lent_counter
 
     def most_popular_book
       book = @books_lent_counter.max_by {|title, num| num}
-      book.key
+      title = book[0]
+      book_checked = @checked_out_books.find {|book| book.title == title}
+      book_returned = @books.find{|book| book.title == title}
+      if book_checked == nil
+        book_returned
+      else
+        book_checked
+      end
     end
 end
